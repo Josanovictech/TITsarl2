@@ -2,28 +2,43 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Dashboard Client</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connexion Client - TIT SARL</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
-<body>
-  <h1>Bienvenue dans le dashboard !</h1>
-  <p>Connexion réussie.</p>
+<body class="login-page">
+
+  <div class="login-container">
+    <h2>Connexion Espace Client</h2>
+    
+    <!-- FORMULAIRE -->
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Adresse email" required />
+      <input type="password" id="password" placeholder="Mot de passe" required />
+      <button type="submit" class="btn">Se connecter</button>
+    </form>
+
+    <p><a href="../index.html">← Retour à l'accueil</a></p>
+  </div>
+
+  <!-- ✅ SCRIPT À PLACER ICI -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("loginForm");
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+
+        if(email === "client@example.com" && password === "password123") {
+          window.location.href = "dashboard.html";
+        } else {
+          alert("Email ou mot de passe incorrect");
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("loginForm");
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value;
-
-      if(email === "client@example.com" && password === "password123") {
-        window.location.href = "dashboard.html";
-      } else {
-        alert("Email ou mot de passe incorrect");
-      }
-    });
-  });
-</script>
