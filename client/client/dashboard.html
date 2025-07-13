@@ -2,43 +2,48 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Connexion Client - TIT SARL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tableau de bord Client - TIT SARL</title>
   <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
-<body class="login-page">
+<body>
 
-  <div class="login-container">
-    <h2>Connexion Espace Client</h2>
-    
-    <!-- FORMULAIRE -->
-    <form id="loginForm">
-      <input type="email" id="email" placeholder="Adresse email" required />
-      <input type="password" id="password" placeholder="Mot de passe" required />
-      <button type="submit" class="btn">Se connecter</button>
-    </form>
+  <header>
+    <nav class="navbar">
+      <div class="logo">TIT SARL</div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="../produits.html">Produits</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="login.html" class="btn-outline">Déconnexion</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <p><a href="../index.html">← Retour à l'accueil</a></p>
-  </div>
+  <section class="presentation">
+    <div class="container">
+      <h1>Bienvenue, Client</h1>
+      <p>Voici votre espace personnel pour consulter vos informations.</p>
+    </div>
+  </section>
 
-  <!-- ✅ SCRIPT À PLACER ICI -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById("loginForm");
-      form.addEventListener("submit", function(e) {
-        e.preventDefault();
+  <section class="services">
+    <div class="container">
+      <ul>
+        <li>📦 Historique des commandes</li>
+        <li>🔧 Suivi de l’installation</li>
+        <li>📄 Télécharger vos factures</li>
+        <li>💬 Messagerie avec notre équipe</li>
+        <li>📥 Faire une demande de devis</li>
+      </ul>
+    </div>
+  </section>
 
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value;
-
-        if(email === "client@example.com" && password === "password123") {
-          window.location.href = "dashboard.html";
-        } else {
-          alert("Email ou mot de passe incorrect");
-        }
-      });
-    });
-  </script>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 TIT SARL – Espace Client</p>
+    </div>
+  </footer>
 
 </body>
 </html>
