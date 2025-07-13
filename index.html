@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TIT SARL - Votre sécurité, notre priorité</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #f4f7fa;
@@ -28,7 +23,6 @@
     header h1 {
       font-size: 2.8em;
       font-weight: 700;
-      margin-bottom: 10px;
       color: #ffd700;
       text-shadow: 2px 2px #000;
     }
@@ -38,10 +32,30 @@
       font-weight: 400;
     }
 
+    nav {
+      background-color: #002244;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
     .hero {
       padding: 60px 20px;
       text-align: center;
-      background-image: url('https://images.unsplash.com/photo-1603888584790-0f3f1c243a83'); /* Image de sécurité */
+      background-image: url('https://images.unsplash.com/photo-1603888584790-0f3f1c243a83');
       background-size: cover;
       background-position: center;
       position: relative;
@@ -79,6 +93,65 @@
       background-color: #ffc400;
     }
 
+    .section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section h3 {
+      text-align: center;
+      font-size: 2em;
+      color: #003366;
+      margin-bottom: 30px;
+    }
+
+    .services, .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card h4 {
+      margin-bottom: 10px;
+      color: #002244;
+    }
+
+    .card p {
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    .price {
+      font-weight: bold;
+      margin: 10px 0;
+      color: #008000;
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1da851;
+    }
+
     footer {
       background-color: #001f3f;
       color: #ccc;
@@ -95,97 +168,62 @@
     <p>Spécialiste en sécurité électronique & systèmes intelligents</p>
   </header>
 
+  <nav>
+    <a href="#">Accueil</a>
+    <a href="#services">Services</a>
+    <a href="#produits">Produits</a>
+    <a href="#contact">Contact</a>
+    <a href="#apropos">À propos</a>
+  </nav>
+
   <section class="hero">
     <div class="hero-content">
       <h2>Votre sécurité, notre priorité</h2>
-      <a href="https://wa.me/243812345678?text=Bonjour%20TIT%20SARL%2C%20je%20souhaite%20obtenir%20un%20devis%20pour%20une%20installation%20de%20sécurité." target="_blank">Demandez un devis gratuit</a>
+      <a href="https://wa.me/243000000000?text=Bonjour%20TIT%20SARL%2C%20je%20souhaite%20obtenir%20un%20devis." target="_blank">Demandez un devis gratuit</a>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <h3>Nos Services</h3>
+    <div class="services">
+      <div class="card">
+        <h4>Installation de vidéosurveillance</h4>
+        <p>Caméras de sécurité professionnelles pour maisons, entreprises et entrepôts.</p>
+      </div>
+      <div class="card">
+        <h4>Alarmes anti-intrusion</h4>
+        <p>Protégez vos locaux avec des systèmes d’alarme connectés 24h/24.</p>
+      </div>
+      <div class="card">
+        <h4>Contrôle d’accès</h4>
+        <p>Solutions modernes avec badge, empreinte ou digicode pour contrôler les entrées.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="produits">
+    <h3>Nos Produits</h3>
+    <div class="products">
+      <div class="card">
+        <h4>Caméra IP HD</h4>
+        <p class="price">Prix : 45 $</p>
+        <a class="btn-whatsapp" href="https://wa.me/243000000000?text=Je%20veux%20acheter%20une%20caméra%20IP%20HD." target="_blank">Commander via WhatsApp</a>
+      </div>
+      <div class="card">
+        <h4>Kit Alarme sans fil</h4>
+        <p class="price">Prix : 60 $</p>
+        <a class="btn-whatsapp" href="https://wa.me/243000000000?text=Je%20veux%20acheter%20un%20kit%20alarme%20sans%20fil." target="_blank">Commander via WhatsApp</a>
+      </div>
+      <div class="card">
+        <h4>Contrôleur d'accès RFID</h4>
+        <p class="price">Prix : 30 $</p>
+        <a class="btn-whatsapp" href="https://wa.me/243000000000?text=Je%20veux%20acheter%20un%20contrôleur%20RFID." target="_blank">Commander via WhatsApp</a>
+      </div>
     </div>
   </section>
 
   <footer>
-    &copy; 2025 TIT SARL. Tous droits réservés.
-  </footer>
-
-</body>
-</html>
-
-
-  <!-- ======= HEADER ======= -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">TIT SARL</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="produits.html">Produits</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="apropos.html">À propos</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="client/login.html" class="btn-outline">Espace Client</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- ======= HERO BANNER ======= -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Votre sécurité, notre priorité</h1>
-      <p>Des solutions modernes et fiables pour protéger ce qui compte le plus.</p>
-      <a href="contact.html" class="btn">Demandez un devis gratuit</a>
-    </div>
-    <div class="hero-image">
-      <img src="assets/images/hero-security.jpg" alt="Système de sécurité en fonctionnement">
-    </div>
-  </section>
-
-  <!-- ======= PRÉSENTATION ======= -->
-  <section class="presentation">
-    <div class="container">
-      <h2>Qui sommes-nous ?</h2>
-      <p><strong>TIT SARL</strong> est une entreprise congolaise spécialisée dans l’installation et la vente de dispositifs de sécurité électronique de pointe pour entreprises, maisons et institutions.</p>
-    </div>
-  </section>
-
-  <!-- ======= SERVICES CLÉS ======= -->
-  <section class="services">
-    <div class="container">
-      <h2>Nos Services</h2>
-      <div class="service-grid">
-        <div class="service-item"><i class="fa fa-video"></i><h3>Vidéosurveillance</h3><p>Installation de caméras IP et analogiques.</p></div>
-        <div class="service-item"><i class="fa fa-lock"></i><h3>Contrôle d’accès</h3><p>Badges, empreintes, serrures électroniques.</p></div>
-        <div class="service-item"><i class="fa fa-bell"></i><h3>Alarmes anti-intrusion</h3><p>Protection contre le vol et les intrusions.</p></div>
-        <div class="service-item"><i class="fa fa-fire-extinguisher"></i><h3>Détection incendie</h3><p>Systèmes de détection de fumée modernes.</p></div>
-        <div class="service-item"><i class="fa fa-cogs"></i><h3>Maintenance</h3><p>Support et dépannage 24/7.</p></div>
-        <div class="service-item"><i class="fa fa-search"></i><h3>Audit & Conseil</h3><p>Évaluation et solutions sur mesure.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= AVANTAGES ======= -->
-  <section class="avantages">
-    <div class="container">
-      <h2>Pourquoi nous choisir ?</h2>
-      <ul class="advantages-list">
-        <li><i class="fa fa-bolt"></i> Intervention rapide</li>
-        <li><i class="fa fa-certificate"></i> Produits certifiés</li>
-        <li><i class="fa fa-users"></i> Équipe expérimentée</li>
-        <li><i class="fa fa-headset"></i> Assistance 24/7</li>
-      </ul>
-      <div class="cta-buttons">
-        <a href="contact.html" class="btn">Contactez-nous maintenant</a>
-        <a href="assets/docs/catalogue.pdf" class="btn-outline" download>Télécharger notre catalogue</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= FOOTER ======= -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 TIT SARL – Tous droits réservés</p>
-      <div class="socials">
-        <a href="https://facebook.com/TITSARL" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://wa.me/243817775070" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      </div>
-    </div>
+    &copy; 2025 TIT SARL - Tous droits réservés.
   </footer>
 
 </body>
