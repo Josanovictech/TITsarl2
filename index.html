@@ -6,6 +6,95 @@
   <title>TIT SARL - Votre sécurité, notre priorité</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    /* Effet de survol animé sur les boutons */
+    .navbar .nav-links a,
+    .btn,
+    .btn-outline {
+      transition: transform 0.2s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
+    }
+
+    .navbar .nav-links a:hover,
+    .btn:hover,
+    .btn-outline:hover {
+      transform: scale(1.08);
+      box-shadow: 0 4px 18px 0 rgba(0,0,0,0.12);
+    }
+    .welcome-message {
+      font-size: 1.1em;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    /* Texte circulaire animé en haut à droite */
+    .circular-text-container {
+      position: fixed;
+      top: 24px;
+      right: 40px;
+      width: 220px;
+      height: 220px;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    .circular-text {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      color: #fff;
+      font-size: 1.1em;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-align: center;
+      transform: rotate(0deg);
+      animation: rotateCircle 8s linear infinite;
+    }
+    @keyframes rotateCircle {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    /* Style doré pour les liens du menu de navigation */
+    .navbar .nav-links a {
+      color: #ffd700;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .navbar .nav-links a:hover,
+    .navbar .nav-links a.active {
+      background: #ffd700;
+      color: #003366;
+    }
+    /* Animation de défilement horizontal pour le sous-titre du header */
+    .scrolling-text {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      box-sizing: border-box;
+      animation: scroll-left 12s linear infinite;
+      font-size: 1.2em;
+      font-weight: 400;
+      color: #fff;
+      width: 100%;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    /* Style pour le logo dans la navbar */
+    .navbar .logo img {
+      height: 50px;
+      vertical-align: middle;
+    }
     * {
       margin: 0;
       padding: 0;
@@ -14,8 +103,23 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f4f7fa;
+      min-height: 100vh;
       color: #333;
+      background: linear-gradient(-45deg, #001f3f, #003366, #ffd700, #444);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease-in-out infinite;
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     header {
@@ -31,6 +135,22 @@
       margin-bottom: 10px;
       color: #ffd700;
       text-shadow: 2px 2px #000;
+      animation: blink-colors 1.2s linear infinite;
+    }
+
+    @keyframes blink-colors {
+      0% {
+        color: #001f3f; /* vert petrole */
+      }
+      33% {
+        color: #ffd700; /* jaune */
+      }
+      66% {
+        color: #444; /* gris foncé */
+      }
+      100% {
+        color: #001f3f;
+      }
     }
 
     header p {
@@ -65,6 +185,20 @@
       margin-bottom: 20px;
     }
 
+    /* Animation de fondu pour le titre principal */
+    .hero-content h1 {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1.5s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .hero a {
       background-color: #ffd700;
       color: #003366;
@@ -90,9 +224,22 @@
 </head>
 <body>
 
+  <!-- Texte circulaire animé en haut à droite -->
+  <div class="circular-text-container">
+    <svg viewBox="0 0 220 220" width="220" height="220">
+      <defs>
+        <path id="circlePath" d="M 110, 110 m -90, 0 a 90,90 0 1,1 180,0 a 90,90 0 1,1 -180,0"/>
+      </defs>
+      <text class="circular-text">
+        <textPath xlink:href="#circlePath" startOffset="0">Le monde de l'intelligence artificielle • </textPath>
+      </text>
+    </svg>
+  </div>
+
   <header>
-    <h1>TIT SARL</h1>
-    <p>Spécialiste en sécurité électronique & systèmes intelligents</p>
+  <p class="welcome-message">Bienvenue sur le site officiel TIT SARL&nbsp;!</p>
+  <h1>TIT SARL</h1>
+  <p class="scrolling-text">Spécialiste en sécurité électronique & systèmes intelligents</p>
 
 
   <!-- ======= HEADER ======= -->
@@ -100,7 +247,7 @@
   <nav class="navbar">
     <div class="logo">
       <a href="index.html">
-        <img src="https://i15.tvoysad.ru/2025/07/14/logos062d6aa61183c2c8.jpg" alt="Logo TIT SARL" style="height: 50px; vertical-align: middle;">
+  <img src="https://i15.tvoysad.ru/2025/07/14/logos062d6aa61183c2c8.jpg" alt="Logo TIT SARL">
       </a>
     </div>
     <ul class="nav-links">
@@ -129,8 +276,8 @@
   <!-- ======= HERO BANNER ======= -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Votre sécurité, notre priorité</h1>
-      <p>Des solutions modernes et fiables pour protéger ce qui compte le plus.</p>
+  <h1>Votre sécurité, notre priorité</h1>
+  <p>Des solutions modernes et fiables pour protéger ce qui compte le plus.</p>
       <a href="contact.html" class="btn">Demandez un devis gratuit</a>
     </div>
  
@@ -181,11 +328,12 @@
     <div class="container">
       <p>&copy; 2025 TIT SARL – Tous droits réservés</p>
       <div class="socials">
-        <a href="https://facebook.com/TITSARL" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://wa.me/243817775070" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://facebook.com/TITSARL" target="_blank" rel="noopener" title="Page Facebook TIT SARL"><i class="fab fa-facebook"></i></a>
+  <a href="https://wa.me/243817775070" target="_blank" rel="noopener" title="Contact WhatsApp TIT SARL"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </footer>
 
 </body>
 </html>
+	
