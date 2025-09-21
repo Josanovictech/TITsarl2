@@ -1,67 +1,148 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nos Produits - TIT SARL</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('assets/images/products-bg.jpg') no-repeat center center/cover;
+      color: #333;
+    }
+    header {
+      background: rgba(0,0,0,0.8);
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      color: #00c4ff;
+    }
+    .btn-retour {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 15px;
+      background: #ff6600;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .btn-retour:hover {
+      background: #e65c00;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0px 5px 20px rgba(0,0,0,0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+    }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 15px;
+      text-align: center;
+    }
+    .product-info h3 {
+      font-size: 1.3em;
+      color: #222;
+      margin: 10px 0;
+    }
+    .product-info p {
+      color: #555;
+      font-size: 0.95em;
+      margin: 10px 0;
+    }
+    .price {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #00c4ff;
+    }
+    .btn-whatsapp {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 16px;
+      background: #25D366;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .btn-whatsapp:hover {
+      background: #1da851;
+    }
+  </style>
 </head>
 <body>
-
   <header>
-    <nav class="navbar">
-      <div class="logo">TIT SARL</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="produits.html" class="active">Produits</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="apropos.html">À propos</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="client/login.html" class="btn-outline">Espace Client</a></li>
-      </ul>
-    </nav>
+    <a href="index.html" class="btn-retour">⬅ Retour à l’accueil</a>
+    <h1>Nos Produits</h1>
   </header>
 
-  <section class="presentation">
-    <div class="container">
-      <h1>Nos Produits</h1>
-      <p>Matériel de sécurité certifié, prêt à l’installation.</p>
-    </div>
-  </section>
-
-  <section class="services">
-    <div class="container">
-      <h2>Caméras de surveillance</h2>
-      <div class="service-grid">
-        <div class="service-item">
-          <img src="https://i12.tvoysad.ru/2025/07/13/camera-surveillance-exterieur-1024x575a2e18bcc314d639f.jpg" alt="Caméra IP" style="width:100%; border-radius:8px;">
-          <h4>Caméra IP HD</h4>
-          <p>Vision jour/nuit, 1080p, accès mobile</p>
-          <p><strong>Prix : 60$</strong></p>
-          <a class="btn" href="https://wa.me/243817775070?text=Je%20souhaite%20installer%20une%20Caméra%20IP%20HD">Demander une installation</a>
+  <div class="container">
+    <div class="products-grid">
+      <!-- Produit 1 -->
+      <div class="product-card">
+        <img src="assets/images/camera.jpg" alt="Caméra de surveillance">
+        <div class="product-info">
+          <h3>Caméra de Surveillance HD</h3>
+          <p>Caméra IP haute résolution avec vision nocturne et enregistrement 24/7.</p>
+          <p class="price">50$</p>
+          <a href="https://wa.me/243817775070?text=Je%20souhaite%20commander%20une%20Cam%C3%A9ra%20de%20Surveillance%20HD" target="_blank" class="btn-whatsapp">📩 Commander sur WhatsApp</a>
         </div>
+      </div>
 
-        <div class="service-item">
-          <img src="https://i10.tvoysad.ru/2025/07/13/acd1e2d1ed48ff4e9.jpg" alt="Caméra PTZ" style="width:100%; border-radius:8px;">
-          <h4>Caméra PTZ motorisée</h4>
-          <p>Rotation automatique 360°, zoom optique</p>
-          <p><strong>Prix : 120$</strong></p>
-          <a class="btn" href="https://wa.me/243817775070?text=Je%20souhaite%20installer%20une%20Caméra%20PTZ">Demander une installation</a>
+      <!-- Produit 2 -->
+      <div class="product-card">
+        <img src="assets/images/alarme.jpg" alt="Système d'alarme">
+        <div class="product-info">
+          <h3>Système d’Alarme Anti-Incendie</h3>
+          <p>Détecteurs de fumée et centrale intelligente pour sécurité optimale.</p>
+          <p class="price">30$</p>
+          <a href="https://wa.me/243817775070?text=Je%20souhaite%20commander%20un%20Syst%C3%A8me%20d'Alarme%20Anti-Incendie" target="_blank" class="btn-whatsapp">📩 Commander sur WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- Produit 3 -->
+      <div class="product-card">
+        <img src="assets/images/cablage.jpg" alt="Installation électrique">
+        <div class="product-info">
+          <h3>Installation Électrique</h3>
+          <p>Service complet d’installation et maintenance électrique.</p>
+          <p class="price">Sur devis</p>
+          <a href="https://wa.me/243817775070?text=Je%20souhaite%20avoir%20un%20devis%20pour%20une%20Installation%20%C3%89lectrique" target="_blank" class="btn-whatsapp">📩 Demander un devis</a>
         </div>
       </div>
     </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 TIT SARL – Tous droits réservés</p>
-      <div class="socials">
-        <a href="https://facebook.com/TITSARL" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://wa.me/243817775070" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      </div>
-    </div>
-  </footer>
+  </div>
 
 </body>
 </html>
