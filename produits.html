@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nos Produits - TIT SARL</title>²
+  <title>Nos Produits - TIT SARL</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -50,33 +50,29 @@
       color: #023e8a;
     }
     button {
-      padding: 10px 18px;
+      padding: 12px 20px;
       background: #0077b6;
       color: white;
       border: none;
       border-radius: 6px;
       cursor: pointer;
-      margin-top: 10px;
+      margin-top: 20px;
       transition: background 0.3s;
+      font-size: 16px;
     }
     button:hover {
       background: #023e8a;
     }
-    .caracteristiques {
+    .installation {
       display: none;
-      margin-top: 15px;
+      margin-top: 20px;
       background: #f8f9fa;
-      padding: 15px;
+      padding: 20px;
       border-radius: 8px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      text-align: left;
-    }
-    .caracteristiques ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .caracteristiques li {
-      margin: 8px 0;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .retour {
       text-align: center;
@@ -95,9 +91,9 @@
     }
   </style>
   <script>
-    function toggleDetails(id) {
-      const el = document.getElementById(id);
-      el.style.display = (el.style.display === "block") ? "none" : "block";
+    function toggleInstallation() {
+      const bloc = document.getElementById("installation");
+      bloc.style.display = (bloc.style.display === "block") ? "none" : "block";
     }
   </script>
 </head>
@@ -113,71 +109,39 @@
     <div class="produit">
       <img src="https://i15.tvoysad.ru/2025/09/27/WhatsApp-Image-2025-09-27-a-10.01.15_1385b485d36aadf3c9c80d00.jpg" alt="Caméra de surveillance">
       <h3>Caméra de Surveillance HD</h3>
-      <button onclick="toggleDetails('carac1')">📋 Voir les caractéristiques</button>
-      <div id="carac1" class="caracteristiques">
-        <ul>
-          <li>📌 Résolution : Full HD 1080p</li>
-          <li>📌 Vision nocturne : 30m</li>
-          <li>📌 Connexion : Wi-Fi / Ethernet</li>
-          <li>📌 Stockage : Cloud + Carte SD</li>
-        </ul>
-      </div>
     </div>
 
     <!-- Produit 2 -->
     <div class="produit">
       <img src="https://i10.tvoysad.ru/2025/09/27/WhatsApp-Image-2025-09-27-a-10.05.45_b7035cc6e9a2100fd4bfb255.jpg" alt="Alarme anti-incendie">
       <h3>Système d’Alarme Anti-Incendie</h3>
-      <button onclick="toggleDetails('carac2')">📋 Voir les caractéristiques</button>
-      <div id="carac2" class="caracteristiques">
-        <ul>
-          <li>📌 Détecteur de fumée intelligent</li>
-          <li>📌 Sirène 120 dB intégrée</li>
-          <li>📌 Notification via application mobile</li>
-          <li>📌 Autonomie batterie 24h</li>
-        </ul>
-      </div>
     </div>
 
     <!-- Produit 3 -->
     <div class="produit">
-      <img src="https://i11.tvoysad.ru/2025/09/27/WhatsApp-Image-2025-09-27-a-10.06.34_b27c4a54cdabc7388022321f.jpg" alt="alarme anti-intrusions">
-      <h3>Systeme d'alarme anti-intrusions</h3>
-      <button onclick="toggleDetails('carac3')">📋 Voir les caractéristiques</button>
-      <div id="carac3" class="caracteristiques">
-        <ul>
-          <li>📌 Dissuasion, détection et mise en fuite
-: Le système a pour objectif de dissuader l'intrus, de détecter son intrusion et de le faire fuir</li>
-          <li>📌 Flexibilité
-: Le choix et le nombre des détecteurs, le type de sirène et les fonctionnalités du transmetteur sont adaptés en fonction de la superficie, de la configuration et des besoins spécifiques du lieu à protéger. 
-</li>
-          <li>📌Niveau de surveillance
-: Les systèmes peuvent être auto-surveillés (le propriétaire reçoit les alertes) ou gérés par un centre de surveillance professionnel qui répond aux alertes et alerte les secours si nécessaire</li>
-    
-          <li>📌 Installation professionnelle incluse</li>
-        </ul>
-      </div>
+      <img src="https://i11.tvoysad.ru/2025/09/27/WhatsApp-Image-2025-09-27-a-10.06.34_b27c4a54cdabc7388022321f.jpg" alt="Systeme d'alarme anti-intrusion">
+      <h3>Systeme d'alarme anti-intrusion</h3>
     </div>
   </div>
-    <!-- Bouton en bas -->
+
+  <!-- Bouton en bas -->
   <div style="text-align: center;">
-    <button onclick="toggleInstallation()">⚡ À savoir sur les installation produits camera</button>
+    <button onclick="toggleInstallation()">⚡ À savoir sur l’installation de nos produits</button>
   </div>
 
   <!-- Bloc texte caché -->
   <div id="installation" class="installation">
     <h2>À savoir sur l’installation de nos produits</h2>
     <p>
-       ✅ L’installation de nos systèmes de sécurité (caméras, alarmes, câblage, contrôle d’accès) doit toujours être réalisée par des techniciens qualifiés afin de garantir fiabilité et performance.  
+      ✅ L’installation de nos systèmes de sécurité (caméras, alarmes, câblage, contrôle d’accès) doit toujours être réalisée par des techniciens qualifiés afin de garantir fiabilité et performance.  
       <br><br>
       📌 Pour les caméras, il est important de choisir des emplacements stratégiques offrant une vue optimale, tout en respectant la confidentialité.  
       <br><br>
       📌 Les alarmes et détecteurs doivent être positionnés dans des zones sensibles (couloirs, plafonds, zones à forte affluence).  
       <br><br>
-      📌 Le câblage réseau et fibre optique doit respecter les normes électriques et éviter toute interférence avec d’autres installations.  
+      📌 L'installation d'une alarme anti-intrusion nécessite de choisir un emplacement stratégique pour la centrale et les détecteurs, de privilégier un système sans fil pour plus de simplicité ou un système filaire pour plus de fiabilité, et de bien considérer les points faibles de votre domicile pour une protection optimale
       <br><br>
       ⚙️ Notre équipe assure un service clé en main incluant l’étude du site, l’installation, la configuration et la formation d’utilisation.  
-    </p>
     </p>
   </div>
 
