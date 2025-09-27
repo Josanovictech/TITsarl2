@@ -3,145 +3,186 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nos Produits - TIT SARL</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Nos Produits - TIT SARL</title>²
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: url('assets/images/products-bg.jpg') no-repeat center center/cover;
+      background: #f0f4f8;
       color: #333;
     }
     header {
-      background: rgba(0,0,0,0.8);
+      background: linear-gradient(135deg, #0077b6, #023e8a);
+      color: white;
       padding: 20px;
       text-align: center;
-      color: #fff;
-      position: relative;
     }
     header h1 {
       margin: 0;
-      font-size: 2.5em;
-      color: #00c4ff;
-    }
-    .btn-retour {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      padding: 10px 15px;
-      background: #ff6600;
-      color: #fff;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-    .btn-retour:hover {
-      background: #e65c00;
+      font-size: 2rem;
     }
     .container {
-      max-width: 1200px;
-      margin: 40px auto;
+      max-width: 1100px;
+      margin: 30px auto;
       padding: 20px;
-    }
-    .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
     }
-    .product-card {
-      background: rgba(255,255,255,0.95);
+    .produit {
+      background: white;
       border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0px 5px 20px rgba(0,0,0,0.15);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
-    }
-    .product-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .product-info {
-      padding: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
       text-align: center;
+      transition: transform 0.2s ease-in-out;
     }
-    .product-info h3 {
-      font-size: 1.3em;
-      color: #222;
-      margin: 10px 0;
+    .produit:hover {
+      transform: translateY(-5px);
     }
-    .product-info p {
-      color: #555;
-      font-size: 0.95em;
-      margin: 10px 0;
+    .produit img {
+      width: 100%;
+      border-radius: 10px;
     }
-    .price {
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #00c4ff;
+    .produit h3 {
+      margin-top: 15px;
+      color: #023e8a;
     }
-    .btn-whatsapp {
-      display: inline-block;
+    button {
+      padding: 10px 18px;
+      background: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
       margin-top: 10px;
-      padding: 10px 16px;
-      background: #25D366;
-      color: #fff;
-      font-weight: bold;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #023e8a;
+    }
+    .caracteristiques {
+      display: none;
+      margin-top: 15px;
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    .caracteristiques ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .caracteristiques li {
+      margin: 8px 0;
+    }
+    .retour {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .retour a {
+      padding: 12px 20px;
+      background: #ff6b00;
+      color: white;
       text-decoration: none;
       border-radius: 8px;
-      transition: 0.3s;
+      font-weight: bold;
     }
-    .btn-whatsapp:hover {
-      background: #1da851;
+    .retour a:hover {
+      background: #e85d00;
     }
   </style>
+  <script>
+    function toggleDetails(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === "block") ? "none" : "block";
+    }
+  </script>
 </head>
 <body>
+
   <header>
-    <a href="index.html" class="btn-retour">⬅ Retour à l’accueil</a>
     <h1>Nos Produits</h1>
+    <p>Découvrez notre gamme complète en sécurité électronique et électricité</p>
   </header>
 
   <div class="container">
-    <div class="products-grid">
-      <!-- Produit 1 -->
-      <div class="product-card">
-        <img src="assets/images/camera.jpg" alt="Caméra de surveillance">
-        <div class="product-info">
-          <h3>Caméra de Surveillance HD</h3>
-          <p>Caméra IP haute résolution avec vision nocturne et enregistrement 24/7.</p>
-          <p class="price">50$</p>
-          <a href="https://wa.me/243817775070?text=Je%20souhaite%20commander%20une%20Cam%C3%A9ra%20de%20Surveillance%20HD" target="_blank" class="btn-whatsapp">📩 Commander sur WhatsApp</a>
-        </div>
-      </div>
-
-      <!-- Produit 2 -->
-      <div class="product-card">
-        <img src="assets/images/alarme.jpg" alt="Système d'alarme">
-        <div class="product-info">
-          <h3>Système d’Alarme Anti-Incendie</h3>
-          <p>Détecteurs de fumée et centrale intelligente pour sécurité optimale.</p>
-          <p class="price">30$</p>
-          <a href="https://wa.me/243817775070?text=Je%20souhaite%20commander%20un%20Syst%C3%A8me%20d'Alarme%20Anti-Incendie" target="_blank" class="btn-whatsapp">📩 Commander sur WhatsApp</a>
-        </div>
-      </div>
-
-      <!-- Produit 3 -->
-      <div class="product-card">
-        <img src="assets/images/cablage.jpg" alt="Installation électrique">
-        <div class="product-info">
-          <h3>Installation Électrique</h3>
-          <p>Service complet d’installation et maintenance électrique.</p>
-          <p class="price">Sur devis</p>
-          <a href="https://wa.me/243817775070?text=Je%20souhaite%20avoir%20un%20devis%20pour%20une%20Installation%20%C3%89lectrique" target="_blank" class="btn-whatsapp">📩 Demander un devis</a>
-        </div>
+    <!-- Produit 1 -->
+    <div class="produit">
+      <img src="https://i15.tvoysad.ru/2025/09/27/WhatsApp-Image-2025-09-27-a-10.01.15_1385b485d36aadf3c9c80d00.jpg" alt="Caméra de surveillance">
+      <h3>Caméra de Surveillance HD</h3>
+      <button onclick="toggleDetails('carac1')">📋 Voir les caractéristiques</button>
+      <div id="carac1" class="caracteristiques">
+        <ul>
+          <li>📌 Résolution : Full HD 1080p</li>
+          <li>📌 Vision nocturne : 30m</li>
+          <li>📌 Connexion : Wi-Fi / Ethernet</li>
+          <li>📌 Stockage : Cloud + Carte SD</li>
+        </ul>
       </div>
     </div>
+
+    <!-- Produit 2 -->
+    <div class="produit">
+      <img src="https://i10.tvoysad.ru/2025/09/27/WhatsApp-Image-2025-09-27-a-10.05.45_b7035cc6e9a2100fd4bfb255.jpg" alt="Alarme anti-incendie">
+      <h3>Système d’Alarme Anti-Incendie</h3>
+      <button onclick="toggleDetails('carac2')">📋 Voir les caractéristiques</button>
+      <div id="carac2" class="caracteristiques">
+        <ul>
+          <li>📌 Détecteur de fumée intelligent</li>
+          <li>📌 Sirène 120 dB intégrée</li>
+          <li>📌 Notification via application mobile</li>
+          <li>📌 Autonomie batterie 24h</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Produit 3 -->
+    <div class="produit">
+      <img src="https://i11.tvoysad.ru/2025/09/27/WhatsApp-Image-2025-09-27-a-10.06.34_b27c4a54cdabc7388022321f.jpg" alt="alarme anti-intrusions">
+      <h3>Systeme d'alarme anti-intrusions</h3>
+      <button onclick="toggleDetails('carac3')">📋 Voir les caractéristiques</button>
+      <div id="carac3" class="caracteristiques">
+        <ul>
+          <li>📌 Dissuasion, détection et mise en fuite
+: Le système a pour objectif de dissuader l'intrus, de détecter son intrusion et de le faire fuir</li>
+          <li>📌 Flexibilité
+: Le choix et le nombre des détecteurs, le type de sirène et les fonctionnalités du transmetteur sont adaptés en fonction de la superficie, de la configuration et des besoins spécifiques du lieu à protéger. 
+</li>
+          <li>📌Niveau de surveillance
+: Les systèmes peuvent être auto-surveillés (le propriétaire reçoit les alertes) ou gérés par un centre de surveillance professionnel qui répond aux alertes et alerte les secours si nécessaire</li>
+    
+          <li>📌 Installation professionnelle incluse</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <!-- Bouton en bas -->
+  <div style="text-align: center;">
+    <button onclick="toggleInstallation()">⚡ À savoir sur les installation produits camera</button>
+  </div>
+
+  <!-- Bloc texte caché -->
+  <div id="installation" class="installation">
+    <h2>À savoir sur l’installation de nos produits</h2>
+    <p>
+       ✅ L’installation de nos systèmes de sécurité (caméras, alarmes, câblage, contrôle d’accès) doit toujours être réalisée par des techniciens qualifiés afin de garantir fiabilité et performance.  
+      <br><br>
+      📌 Pour les caméras, il est important de choisir des emplacements stratégiques offrant une vue optimale, tout en respectant la confidentialité.  
+      <br><br>
+      📌 Les alarmes et détecteurs doivent être positionnés dans des zones sensibles (couloirs, plafonds, zones à forte affluence).  
+      <br><br>
+      📌 Le câblage réseau et fibre optique doit respecter les normes électriques et éviter toute interférence avec d’autres installations.  
+      <br><br>
+      ⚙️ Notre équipe assure un service clé en main incluant l’étude du site, l’installation, la configuration et la formation d’utilisation.  
+    </p>
+    </p>
+  </div>
+
+  <div class="retour">
+    <a href="index.html">⬅ Retour à l’accueil</a>
   </div>
 
 </body>
